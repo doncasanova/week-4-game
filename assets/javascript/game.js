@@ -43,43 +43,46 @@ $(document).ready(function () {
         $("#number-to-find").text(targetNumber);
         //------------------------------------------------------------------------------
         //adds players guess together
-        $("#crystals").on("click", ".crystal-image", function () {
-            var crystalValue = ($(this).attr("data-crystalvalue"));
-            crystalValue = parseInt(crystalValue);
-            counter += crystalValue;
-            // alert("New score: " + counter);
-            document.getElementById("user-guess").innerHTML = "" + counter;
+        // $(document).ready(function () {
+            $("#crystals").on("click", ".crystal-image", function () {
+                var crystalValue = ($(this).attr("data-crystalvalue"));
+                crystalValue = parseInt(crystalValue);
+                counter += crystalValue;
+                // alert("New score: " + counter);
+                document.getElementById("user-guess").innerHTML = "" + counter;
 
-            if (counter === targetNumber) {
-                setTimeout(function () {
-                }, 100);
-                alert("You win!");
-                // window.location.reload()
-                wins++
-                // $("wins").text("Wins <br/>  " + wins)
-                document.getElementById("wins").innerHTML = "Wins <br/> " + wins;
-                
-              
-            }
+                if (counter === targetNumber) {
+                    setTimeout(function () {
+                    }, 100);
+                    alert("You win!");
+                    // window.location.reload()
+                    wins++
+                    // $("wins").text("Wins <br/>  " + wins)
+                    document.getElementById("wins").innerHTML = "Wins <br/> " + wins;
+                    $("#crystals").off("click", ".crystal-image")
+                    counter = 0
+                    numberOptions = 0
+                }
 
-            else if (counter > targetNumber) {
-                setTimeout(function () {
-                 } , 100);
-                alert("You loose!!");
-            
-                // window.location.reload()
-                losses++
-                // $("losses").text("Losses <br/>"  + losses)
-                document.getElementById("losses").innerHTML = "Losses <br/>"  + losses;
-                $("re-start").text("Re-Start")
-              
+                else if (counter > targetNumber) {
+                    setTimeout(function () {
+                    }, 100);
+                    alert("You loose!!");
 
-            }
+                    // window.location.reload()
+                    losses++
+                    // $("losses").text("Losses <br/>"  + losses)
+                    document.getElementById("losses").innerHTML = "Losses <br/>" + losses;
+                    $("#crystals").off("click", ".crystal-image")
+                }
 
-            //alerts are firing before the totals are logged
 
-        });
 
+                //alerts are firing before the totals are logged
+
+            });
+
+        // });
+        //----------------------------------------------------------------------------  
     });
-    //----------------------------------------------------------------------------  
 });
