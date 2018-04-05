@@ -17,36 +17,38 @@
 </head>
 
 <body>
-  
-            <div class="container ">
-                    <div class="row">
-                        <div class="col-1 rounded p-2 mb-3 b-3 m-3 bg-info text-white float-left">
-                            <h1 id="number-to-find" class=" number text-center"></h1>
-                            <h1 id="wins" class=" number text-center">Wins=0</h1>
-                        </div>
 
-                        <div class="col-8 rounded p-2 mb-3 b-3 m-3 bg-info text-white">
-                            <button id="Start" class="btn btn-primary number m-1" value="1">
-                                <h2>Start</h2>
-                            </button>
-                            <!-- <input class="btn btn-primary float-right m-1 number" type="button" value="Start"> -->
-                            <p id="instructions" class="instr float-right">If you think you have what it takes click on me and see what to do. The game is this, a random number will
-                                be there. To find this number all you have to do is click a crystals . each chystal will keep a hidden
-                                number that you can have by clicking </p>
-                        </div>
+    <div class="container ">
+        <div class="row">
+            <div class="col-1 rounded p-2 mb-3 b-3 m-3 bg-info text-white float-left">
+                <h1 id="number-to-find" class=" number text-center"></h1>
+                <h1 id="wins" class=" number text-center">Wins
+                    <br/>0</h1>
+            </div>
 
-                        <div class="col-1 rounded p-2 mb-3 b-3 m-3 bg-info text-white">
-                            <p id="user-guess" class="text-center number"></p>
-                            <h1 id="loses" class=" number text-center">Loses=0</h1>
-                        </div>
-            
-                    </div>
-                </div>
+            <div class="col-8 rounded p-2 mb-3 b-3 m-3 bg-info text-white">
+                <button id="Start" class=" btn-sm btn-block number m-1" value="1">
+                    <h2 id="re-start">Play</h2>
+                </button>
+                <!-- <input class="btn btn-primary float-right m-1 number" type="button" value="Start"> -->
+                <p id="instructions" class="instr ">If you think you have what it takes click Start. The game is this, a random number will appear to the left.
+                    There are 4 crystal each having a hidden number behind them. Each time you click one it will add the
+                    amount to your score. You win by getting to the exact amount if you go over...well thats it. </p>
+            </div>
 
-    <div class = "" id="crystals">
+            <div class="col-1 rounded p-2 mb-3 b-3 m-3 bg-info text-white">
+                <p id="user-guess" class="text-center number"></p>
+                <h1 id="losses" class=" number text-center">Losses
+                    <br/>0</h1>
+            </div>
 
+        </div>
+    </div>
+
+    <div id="crystals">
 
     </div>
+
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

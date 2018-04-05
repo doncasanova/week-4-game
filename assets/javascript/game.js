@@ -2,9 +2,10 @@
 
 var crystals = $("#crystals");
 var counter = 0;
-var wins = 0
-var loses = 0
-
+var wins = 0;
+var losses = 0;
+//----------------------------------------------------------------------------
+//Adds the crystals to DOM
 for (var i = 0; i < 4; i++) {
     var numberOptions = 1 + Math.floor(Math.random() * 11)
     console.log(numberOptions + "  crystal")
@@ -15,32 +16,33 @@ for (var i = 0; i < 4; i++) {
     crystals.append(imageCrystal);
 }
 //-----------------------------------------------------------------------------
+//starts program
 $(document).ready(function () {
     $("button").click(function () {
         targetNumber = 0
-        console.log(targetNumber + "  number to find reset")
         counter = 0
-        console.log(counter + "  player number reset")
         document.getElementById("number-to-find").innerHTML = targetNumber;
         document.getElementById("user-guess").innerHTML = counter;
+        document.getElementById("re-start").innerHTML = "Play Again";
+        //-------------------------------------------------------------------------
+        document.getElementById("instructions").innerHTML = "";
         //-----------------------------------------------------------------------------
-
+        //picks random numbers to add to crystals
 
         for (var i = 0; i < 4; i++) {
             var numberOptions = 1 + Math.floor(Math.random() * 11)
-            console.log(numberOptions + "  crystal")
             var imageCrystal = $("<img>");
             imageCrystal.attr("data-crystalvalue", numberOptions);
             crystals.append(imageCrystal);
         }
 
         //-----------------------------------------------------------------------------
-        // number to be found
+        // picks random number to be found
         var targetNumber = 19 + Math.floor(Math.random() * 101)
         console.log(targetNumber + "number to find")
         $("#number-to-find").text(targetNumber);
         //------------------------------------------------------------------------------
-
+        //adds players guess together
         $("#crystals").on("click", ".crystal-image", function () {
             var crystalValue = ($(this).attr("data-crystalvalue"));
             crystalValue = parseInt(crystalValue);
@@ -52,19 +54,25 @@ $(document).ready(function () {
                 setTimeout(function () {
                 }, 100);
                 alert("You win!");
+                // window.location.reload()
                 wins++
-                document.getElementById("wins").innerHTML = "Wins  " + wins;
-
-
+                // $("wins").text("Wins <br/>  " + wins)
+                document.getElementById("wins").innerHTML = "Wins <br/> " + wins;
+                
+              
             }
 
-            else if (counter >= targetNumber) {
+            else if (counter > targetNumber) {
                 setTimeout(function () {
-                }, 100);
-                alert("You lose!!");
-                loses++
-                document.getElementById("loses").innerHTML = "Loses  " + loses;
-
+                 } , 100);
+                alert("You loose!!");
+            
+                // window.location.reload()
+                losses++
+                // $("losses").text("Losses <br/>"  + losses)
+                document.getElementById("losses").innerHTML = "Losses <br/>"  + losses;
+                $("re-start").text("Re-Start")
+              
 
             }
 
