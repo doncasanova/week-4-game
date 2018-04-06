@@ -1,4 +1,8 @@
-
+body{
+  background-image: url("../images/Earth-Wallpapers-46.jpg");
+}
+ 
+ 
  .crystal-image {
    margin: 0 auto;
     width: 200px;
@@ -7,13 +11,13 @@
 
   .number{
  
-  color: black;
+  /* color: rgb(224, 213, 213); */
   font-size: 24px;
 
   }
 
   .instr{
-    color: black
+    /* color: black */
   }
   #crystals{
     width: fit-content;
