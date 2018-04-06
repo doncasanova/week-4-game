@@ -53,21 +53,22 @@ $(document).ready(function () {
 
                 if (counter === targetNumber) {
                     setTimeout(function () {
+                        alert("You win!");
                     }, 100);
-                    alert("You win!");
+                    
                     // window.location.reload()
                     wins++
                     // $("wins").text("Wins <br/>  " + wins)
                     document.getElementById("wins").innerHTML = "Wins <br/> " + wins;
                     $("#crystals").off("click", ".crystal-image")
-                    counter = 0
-                    numberOptions = 0
+                    
                 }
 
                 else if (counter > targetNumber) {
-                    setTimeout(function () {
+                    setTimeout(function () { 
+                        alert("You loose!!");
                     }, 100);
-                    alert("You loose!!");
+                   
 
                     // window.location.reload()
                     losses++
