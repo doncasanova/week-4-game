@@ -54,20 +54,19 @@ $(document).ready(function () {
 
             if (counter === targetNumber) {
                 setTimeout(function () {
-                    alert("You win!");
+                    $("#instructions").text("You own the universe!");
                 }, 100);
 
-                // window.location.reload()
                 wins++
-                // $("wins").text("Wins <br/>  " + wins)
-                document.getElementById("wins").innerHTML = "Wins <br/> " + wins;
+                $("#wins").html("Wins <br/>  " + wins)
                 $("#crystals").off("click", ".crystal-image")
 
             }
 
             else if (counter > targetNumber) {
                 setTimeout(function () {
-                    alert("You loose!!" );
+                    $("#instructions").text("You have been sucked into a black hole!");
+                   
                 }, 100);
 
                 losses++
@@ -78,7 +77,7 @@ $(document).ready(function () {
 
 
             //alerts are firing before the totals are logged
-            // $("instructions").text("You have been sucked into a black hole!");
+            $("#instructions").text("You have been sucked into a black hole!");
              // $("losses").text("Losses <br/>"  + losses)
 
         });
