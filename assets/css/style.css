@@ -1,27 +1,63 @@
 body{
+  padding: 20px;
   background-image: url("../images/Earth-Wallpapers-46.jpg");
 }
  
  
  .crystal-image {
-   margin: 0 auto;
+    padding: 5px;
+    margin: 0 auto;
+    width: 75px;
+    height: 75px;
+  }
+
+  @media(min-width: 600px){
+    .crystal-image3 {
+      padding: 5px;
+      margin: 0 auto;
+      width: 125px;
+      height: 125px;
+     }
+    }
+
+  @media(min-width: 992px){
+  .crystal-image2 {
+    padding: 5px;
+    margin: 0 auto;
     width: 200px;
     height: 200px;
+   }
   }
 
   .number{
- 
-  /* color: rgb(224, 213, 213); */
-  font-size: 24px;
+  font-size: 18px;
 
   }
-
+  @media(min-width: 992px){
+    .number2{
+      font-size: 24px;
+    }
+  }
   .instr{
-    /* color: black */
+    color: white;
+    font-size: 18px;
   }
+
+  @media(min-width: 992px){
+    .instr2{
+      color: white;
+      font-size: 24px;
+    }
+  }
+
   #crystals{
     width: fit-content;
     margin: 0 auto;
     padding: 5px;
+  }
+
+  .instrText{
+    color: white;
+    margin: 0 auto;
   }
   
